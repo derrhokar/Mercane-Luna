@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.Navbar {
+  background-image: url("/Assets/Images/starNavbar.jpg");
+  background-repeat: round;
+}
+
+.Navbar .navElements {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.Navbar .navElements .logo {
+  font-family: "Lobster", cursive;
+  font-size: 2em;
+}
+
+.Navbar .navElements .articleCat {
+  display: flex;
+}
+
+.Navbar .navElements .articleCat li {
+  padding-left: 30px;
+  font-size: 1.5em;
+}
+
+.Navbar .navElements #registerList {
+  display: flex;
+  padding-left: 30px;
+  font-size: 1.3em;
+}
+
+.Navbar .navElements #registerList li {
+  padding-left: 10px;
+  color: white;
+}
+
+.Navbar .navElements #cart svg {
+  color: turquoise;
+}
+
+.stockCounter {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  border: 1px solid black;
+  align-items: center;
+}
+
+body {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: violet;
+}
+
+ul {
+  list-style: none;
+  font-family: "Bebas Neue", cursive;
+}
+/*# sourceMappingURL=main.css.map */
