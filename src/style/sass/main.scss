@@ -1,23 +1,25 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 //Importar partials
 @import 'utilities';
 @import 'navbar';
 @import 'itemcount';
-body{
-    font-size: 16px;
+@import 'item';
+
+body {
+  font-size: 16px;
 }
-a{
-    text-decoration: none;
-    color: violet;
+a {
+  text-decoration: none;
+  color: violet;
 }
-ul{
-    list-style: none;
-    font-family: $menuItems;
+ul {
+  list-style: none;
+  font-family: $menuItems;
 }
