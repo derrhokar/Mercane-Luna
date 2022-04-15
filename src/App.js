@@ -1,13 +1,8 @@
+import Home from './routes/Home';
 import './style/main.css';
-import Navbar from './components/Navbar';
-import ItemListContainer from './containers/ItemListContainer';
+
 const App = () => {
-  return (
-    <>
-      <Navbar />
-      <ItemListContainer />
-    </>
-  );
+  return <Home />;
 };
 
 export default App;

@@ -34,6 +34,7 @@
 .Navbar .navElements .articleCat li {
   padding-left: 30px;
   font-size: 1.5em;
+  color: violet;
 }
 
 .Navbar .navElements #registerList {

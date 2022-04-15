@@ -6,6 +6,11 @@ const products = [
       'This hardcover compilation updates the fan-favorite campaign to the Pathfinder Roleplaying Game rules with revised and new content in more than 400 pages packed with mayhem, excitement, and adventure! Celebrating both the fifth anniversary of the Pathfinder Adventure Path and the tenth anniversary of Paizo Publishing, this new edition expands the original campaign with new options and refined encounters throughout, incorporating 5 years of community feedback.',
     price: '40',
     pictureUrl: 'https://m.media-amazon.com/images/I/51sFCZpDhZL._AC_SY780_.jpg',
+    categoryId: 1,
+    category: {
+      name: 'Modules',
+      id: 1,
+    },
   },
   {
     id: 2,
@@ -15,6 +20,11 @@ const products = [
     price: '7.95',
     pictureUrl:
       'https://i.etsystatic.com/24342469/r/il/01e92e/2481155688/il_340x270.2481155688_6u3y.jpg',
+    categoryId: 2,
+    category: {
+      name: 'Miniatures',
+      id: 2,
+    },
   },
   {
     id: 3,
@@ -24,6 +34,11 @@ const products = [
     price: '18.05',
     pictureUrl:
       'https://cdn.shopify.com/s/files/1/2364/6599/products/Song-of-rest-purple-dnd-set-of-dice.jpg?v=1644832121',
+    categoryId: 3,
+    category: {
+      name: 'Dices',
+      id: 3,
+    },
   },
   {
     id: 4,
@@ -32,6 +47,11 @@ const products = [
       'HOW DO YOU WANT TO DO THIS? A war brews on a continent that has withstood more than its fair share of conflict. The Dwendalian Empire and the Kryn Dynasty are on the verge of war. Are you gonna stay put?',
     price: '35',
     pictureUrl: 'https://images-na.ssl-images-amazon.com/images/I/81FgacqauqL.jpg',
+    categoryId: 1,
+    category: {
+      name: 'Modules',
+      id: 1,
+    },
   },
   {
     id: 5,
@@ -41,6 +61,11 @@ const products = [
     price: '95',
     pictureUrl:
       'https://cdn.shopify.com/s/files/1/0491/9705/6162/products/product-image-1644892594.jpg?v=1619283123',
+    categoryId: 3,
+    category: {
+      name: 'Dices',
+      id: 3,
+    },
   },
 ];
 

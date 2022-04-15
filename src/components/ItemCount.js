@@ -4,7 +4,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import IconButton from '@mui/material/IconButton';
 
 let maxStock = 7;
-const ItemCount = () => {
+const ItemCount = ({ onAdd }) => {
   const [modify, setModify] = useState(0);
 
   const increasePurchase = () => {
@@ -18,15 +18,18 @@ const ItemCount = () => {
     }
   };
   return (
-    <div className='stockCounter'>
-      <IconButton aria-label='Add product' onClick={increasePurchase}>
-        <AddIcon />
-      </IconButton>
-      {modify}
-      <IconButton aria-label='Remove product' onClick={decreasePurchase}>
-        <RemoveIcon />
-      </IconButton>
-    </div>
+    <>
+      <div className='stockCounter'>
+        <IconButton aria-label='Add product' onClick={increasePurchase}>
+          <AddIcon />
+        </IconButton>
+        {modify}
+        <IconButton aria-label='Remove product' onClick={decreasePurchase}>
+          <RemoveIcon />
+        </IconButton>
+      </div>
+      <button onClick={() => onAdd(modify)}>Add to cart</button>
+    </>
   );
 };
 
