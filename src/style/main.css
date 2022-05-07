@@ -78,6 +78,14 @@
   height: 100%;
 }
 
+#cartTitle {
+  text-align: center;
+}
+
+#cartScreen {
+  display: flex;
+}
+
 body {
   font-size: 16px;
 }

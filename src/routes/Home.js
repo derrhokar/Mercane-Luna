@@ -3,11 +3,11 @@ import Navbar from '../components/Navbar';
 import ItemDetailContainer from '../containers/ItemDetailContainer';
 import ItemListContainer from '../containers/ItemListContainer';
 import Cart from '../components/Cart';
-import CartContext from '../components/CartContext';
+import CartContextProvider from '../components/CartContext';
 const Home = () => {
   return (
     <>
-      <CartContext>
+      <CartContextProvider>
         <BrowserRouter>
           <Navbar />
           <Routes>
@@ -17,7 +17,7 @@ const Home = () => {
             <Route path='/cart' element={<Cart />} />
           </Routes>
         </BrowserRouter>
-      </CartContext>
+      </CartContextProvider>
     </>
   );
 };
