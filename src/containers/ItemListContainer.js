@@ -1,22 +1,25 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { fetching } from '../utilities/products';
+import db from '../utilities/firebaseconfig';
 import ItemList from '../components/ItemList';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs } from 'firebase/firestore';
 const ItemListContainer = () => {
   const [article, setArticle] = useState([]);
   const { catId } = useParams();
 
   useEffect(() => {
-    async function getData() {
-      let dataStorage = await fetching();
-      if (catId === undefined) {
-        setArticle(dataStorage);
-      } else {
-        setArticle(dataStorage.filter((item) => item.categoryId === parseInt(catId)));
-      }
-    }
-    getData();
+    const fireFetch = async () => {
+      const querySnapshot = await getDocs(collection(db, 'products'));
+      const fireData = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      return fireData;
+    };
+    fireFetch()
+      .then((result) => setArticle(result))
+      .catch((err) => console.log(err));
   }, [catId]);
 
   return (

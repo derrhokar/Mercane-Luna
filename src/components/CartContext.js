@@ -39,9 +39,16 @@ const CartContextProvider = ({ children }) => {
     filtered.articleQty += n;
     console.log(filtered.articleQty);
   };
-
+  const calcQty = () => {
+    let quantity = cartList.map((item) => item.articleQty);
+    return quantity.reduce(
+      (previousValue, currentValue) => previousValue + currentValue,
+      0
+    );
+  };
   return (
-    <CartContext.Provider value={{ cartList, addToCart, clear, removeItem, addInCart }}>
+    <CartContext.Provider
+      value={{ cartList, addToCart, clear, removeItem, addInCart, calcQty }}>
       {children}
     </CartContext.Provider>
   );

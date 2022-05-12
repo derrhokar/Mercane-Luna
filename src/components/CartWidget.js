@@ -9,7 +9,7 @@ const CartWidget = () => {
   const context = useContext(CartContext);
 
   return (
-    <Badge badgeContent={context.cartList.length} color='secondary'>
+    <Badge badgeContent={context.calcQty()} color='secondary'>
       <IconButton aria-label='Go to cart'>
         <ShoppingCartIcon />
       </IconButton>
