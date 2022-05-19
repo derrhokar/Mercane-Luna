@@ -34,8 +34,12 @@ const Navbar = () => {
           </ul>
           <div>
             <ul id='registerList'>
-              <li>Register</li>
-              <li>Log In</li>
+              <Link to='/signup'>
+                <li>Register</li>
+              </Link>
+              <Link to='/login'>
+                <li>Log In</li>
+              </Link>
             </ul>
           </div>
           <div id='cart'>

@@ -19,8 +19,7 @@ const ItemDetailContainer = () => {
     };
     fireFetch();
   }, []);
-
-  return <ItemDetail item={data} />;
+  return <ItemDetail item={{ ...data, itemId }} />;
 };
 
 export default ItemDetailContainer;

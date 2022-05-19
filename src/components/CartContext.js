@@ -6,12 +6,12 @@ const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
 
   const addToCart = (item, n) => {
-    let checkCart = cartList.find((article) => article.articleId === item.id);
+    let checkCart = cartList.find((article) => article.articleId === item.itemId);
     if (checkCart === undefined) {
       setCartList([
         ...cartList,
         {
-          articleId: item.id,
+          articleId: item.itemId,
 
           articleImg: item.pictureUrl,
 
@@ -34,11 +34,7 @@ const CartContextProvider = ({ children }) => {
     let filtered = cartList.filter((item) => item.articleId !== id);
     setCartList(filtered);
   };
-  const addInCart = (id, n) => {
-    let filtered = cartList.find((item) => item.articleId === id);
-    filtered.articleQty += n;
-    console.log(filtered.articleQty);
-  };
+
   const calcQty = () => {
     let quantity = cartList.map((item) => item.articleQty);
     return quantity.reduce(
@@ -46,9 +42,44 @@ const CartContextProvider = ({ children }) => {
       0
     );
   };
+
+  const calcItemTotalPrice = (id) => {
+    let filtered = cartList.filter((item) => item.articleId === id);
+    return filtered[0].articleQty * filtered[0].articlePrice;
+  };
+  var priceStorage = cartList.map((item) => calcItemTotalPrice(item.articleId));
+  const totals = {
+    Subtotal: () => {
+      return priceStorage.reduce(
+        (previousValue, currentValue) => previousValue + currentValue,
+        0
+      );
+    },
+    Taxes: () => {
+      return priceStorage.reduce(
+        (previousValue, currentValue) => (previousValue + currentValue) * 0.65,
+        0
+      );
+    },
+    Discounts: () => {
+      return priceStorage.reduce(
+        (previousValue, currentValue) => (previousValue + currentValue) * 0.65,
+        0
+      );
+    },
+  };
+
   return (
     <CartContext.Provider
-      value={{ cartList, addToCart, clear, removeItem, addInCart, calcQty }}>
+      value={{
+        cartList,
+        addToCart,
+        clear,
+        removeItem,
+        calcQty,
+        calcItemTotalPrice,
+        totals,
+      }}>
       {children}
     </CartContext.Provider>
   );

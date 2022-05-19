@@ -1,16 +1,23 @@
 import React from 'react';
 import Item from './Item';
 import { CircularProgress } from '@mui/material';
-function ItemList({ articles }) {
-  return (
-    <div className='itemCards'>
-      {articles.length > 0 ? (
-        articles.map((product) => <Item key={product.id} {...product} />)
-      ) : (
-        <CircularProgress />
-      )}
-    </div>
-  );
-}
+import { useParams } from 'react-router-dom';
+
+const ItemList = ({ articles }) => {
+  const { catId } = useParams();
+
+  const catFilter = articles.filter((item) => catId == item.categoryId);
+  const renderItem = () => {
+    if (articles.length > 0) {
+      return catId == undefined
+        ? articles.map((product) => <Item key={product.id} {...product} />)
+        : catFilter.map((product) => <Item key={product.id} {...product} />);
+    } else {
+      return <CircularProgress />;
+    }
+  };
+  return <div className='itemCards'>{renderItem()}</div>;
+};
 
 export default ItemList;
+//)

@@ -6,21 +6,22 @@ import { useParams } from 'react-router-dom';
 import { collection, getDocs } from 'firebase/firestore';
 const ItemListContainer = () => {
   const [article, setArticle] = useState([]);
-  const { catId } = useParams();
 
   useEffect(() => {
     const fireFetch = async () => {
       const querySnapshot = await getDocs(collection(db, 'products'));
+
       const fireData = querySnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
+
       return fireData;
     };
     fireFetch()
       .then((result) => setArticle(result))
       .catch((err) => console.log(err));
-  }, [catId]);
+  }, []);
 
   return (
     <>

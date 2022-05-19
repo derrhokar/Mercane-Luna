@@ -4,6 +4,8 @@ import ItemDetailContainer from '../containers/ItemDetailContainer';
 import ItemListContainer from '../containers/ItemListContainer';
 import Cart from '../components/Cart';
 import CartContextProvider from '../components/CartContext';
+import SignUp from '../components/SignUp';
+import LogIn from '../components/LogIn';
 const Home = () => {
   return (
     <>
@@ -15,6 +17,8 @@ const Home = () => {
             <Route path='/category/:catId' element={<ItemListContainer />} />
             <Route path='/item/:itemId' element={<ItemDetailContainer />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/signup' element={<SignUp />} />
+            <Route path='/login' element={<LogIn />} />
           </Routes>
         </BrowserRouter>
       </CartContextProvider>

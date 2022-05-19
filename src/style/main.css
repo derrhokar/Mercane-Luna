@@ -10,7 +10,7 @@
 
 .Navbar {
   background-image: url("/Assets/Images/starNavbar.jpg");
-  background-repeat: round;
+  background-repeat: no-repeat;
 }
 
 .Navbar .navElements {
@@ -31,10 +31,15 @@
   display: flex;
 }
 
-.Navbar .navElements .articleCat li {
+.Navbar .navElements .articleCat li p {
   padding-left: 30px;
   font-size: 1.5em;
-  color: violet;
+  color: #dd09dd;
+  transition: 0.5s;
+}
+
+.Navbar .navElements .articleCat li p:hover {
+  color: #880488;
 }
 
 .Navbar .navElements #registerList {

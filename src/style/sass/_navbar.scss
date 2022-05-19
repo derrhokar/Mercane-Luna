@@ -1,6 +1,6 @@
 .Navbar {
   background-image: url('/Assets/Images/starNavbar.jpg');
-  background-repeat: round;
+  background-repeat: no-repeat;
   .navElements {
     display: flex;
     align-items: center;
@@ -14,10 +14,14 @@
     }
     .articleCat {
       display: flex;
-      li {
+      li p {
         padding-left: 30px;
         font-size: 1.5em;
-        color: violet;
+        color: map-get($colores, navLetter);
+        transition: 0.5s;
+        &:hover {
+          color: map-get($colores, navHover);
+        }
       }
     }
     #registerList {
